@@ -35,6 +35,7 @@ class Program{
             Console.WriteLine("----Você deseja usar qual calculadora?----");
             Console.WriteLine("0 - Sair");
             Console.WriteLine("1 - Calculadora de adição simples (dois números)");
+            Console.WriteLine("2 - Calculadora simples das quatro operações basicas (+, -, *, /)");
             Console.WriteLine("Digite sua escolha:");
 
             entrada = int.Parse(Console.ReadLine());
@@ -45,7 +46,7 @@ class Program{
                 Console.WriteLine("Tente novamente!");
                 Thread.Sleep(2000);
             }
-            Calculadoras(entrada);
+            else Calculadoras(entrada);
 
         };
             
@@ -55,7 +56,7 @@ class Program{
         
         bool saida = true;
 
-        if(entrada < 0 || entrada > 1){
+        if(entrada < 0 || entrada > 2){
             saida = false;
         }
 
@@ -68,7 +69,12 @@ class Program{
             case 1:
                 new CalculadoraAdicao();
             break;
+
+            case 2:
+                new CalculadoraSimples();
+            break;
         }
+
     }
 }
 
