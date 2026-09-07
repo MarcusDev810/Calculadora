@@ -37,6 +37,7 @@ public class CalculadoraSimples{
 
             if (!ValidaFormato(saida)){
                 
+                Console.Clear();
                 Console.WriteLine("Formato ou sinal inválido!");
                 Thread.Sleep(2000);
                 
@@ -54,7 +55,7 @@ public class CalculadoraSimples{
         
         bool saida = true;
 
-        if(entrada[1] != "+" || entrada[1] != "-" || entrada[1] != "*" || entrada[1] != "/"){
+        if(entrada[1] != "+" && entrada[1] != "-" && entrada[1] != "*" && entrada[1] != "/"){
             
             saida = false;
         }
