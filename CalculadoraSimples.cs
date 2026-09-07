@@ -3,8 +3,12 @@ public class CalculadoraSimples{
     public CalculadoraSimples(){
     
         LobbyAdicao();
+        string[] dados = EntradaDosDados();
+        double resultado = Calcula(dados);
 
-        Calcula(EntradaDosDados());
+        Console.Clear();
+        Console.WriteLine($"O resultado da sua operação é:  {resultado}");
+        Thread.Sleep(4500);
 
     }
 
@@ -25,9 +29,12 @@ public class CalculadoraSimples{
 
     private string[] EntradaDosDados(){
 
+        Console.Clear();
+            
+        bool repete = true;
         string[] saida = new string[3];
 
-        do{
+        while(repete){
             Console.Clear();
             
             Console.WriteLine("Qual a conta que deseja saber o resultado?:");
@@ -45,8 +52,10 @@ public class CalculadoraSimples{
                 Console.WriteLine("Sinais válidos: +, -, *, /");
                 Thread.Sleep(4000);
             }
+
+            repete = false;
         
-        }while(!ValidaFormato(saida));
+        };
 
         return saida;
     }
@@ -72,9 +81,33 @@ public class CalculadoraSimples{
 
     }
     
-    private void Calcula( string[] entrada ){
+    private double Calcula( string[] entrada ){
 
-        Console.WriteLine("Chegou no calculo :)");
+        double num1 = double.Parse(entrada[0]);
+        double num2 = double.Parse(entrada[2]);
+
+        double saida = 0;
+
+        switch (entrada[1]){
+            
+            case "+":
+                saida = num1 + num2;
+            break;
+
+            case "-":
+                saida = num1 - num2;
+            break;
+
+            case "*":
+                saida = num1 * num2;
+            break;
+
+            case "/":
+                saida = num1 / num2;
+            break;
+        }
+
+        return saida;
     }
 
 }
