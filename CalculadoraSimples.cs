@@ -52,8 +52,10 @@ public class CalculadoraSimples{
                 Console.WriteLine("Sinais válidos: +, -, *, /");
                 Thread.Sleep(4000);
             }
-
-            repete = false;
+            else {
+                repete = false;
+            };
+            
         
         };
 
@@ -63,6 +65,10 @@ public class CalculadoraSimples{
     private bool ValidaFormato( string[] entrada ){
         
         bool saida = true;
+
+        if(entrada.Length != 3){
+            return false;
+        }
 
         if(entrada[1] != "+" && entrada[1] != "-" && entrada[1] != "*" && entrada[1] != "/"){
             
