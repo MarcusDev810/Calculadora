@@ -32,7 +32,7 @@ public class CalculadoraSimples{
         Console.Clear();
             
         bool repete = true;
-        string[] saida = new string[3];
+        string[] dados = new string[3];
 
         while(repete){
             Console.Clear();
@@ -40,15 +40,16 @@ public class CalculadoraSimples{
             Console.WriteLine("Qual a conta que deseja saber o resultado?:");
             Console.WriteLine("(Lembrando que sempre deve separar os números e os sinais por um espaço)");
 
-            saida = Console.ReadLine().Split();
+            dados = Console.ReadLine().Split();
 
-            if (!ValidaFormato(saida)){
+            if (!ValidaFormato(dados)){
                 
                 Console.Clear();
                 Console.WriteLine("Formato ou sinal inválido!");
                 Thread.Sleep(2000);
                 
                 Console.WriteLine("Lembrando que sempre deve separar os números e os sinais por um espaço");
+                Console.WriteLine("E que também a calculadora aceita somente contas de dois números");
                 Console.WriteLine("Sinais válidos: +, -, *, /");
                 Thread.Sleep(4000);
             }
@@ -59,12 +60,12 @@ public class CalculadoraSimples{
         
         };
 
-        return saida;
+        return dados;
     }
 
     private bool ValidaFormato( string[] entrada ){
         
-        bool saida = true;
+        bool valido = true;
 
         if(entrada.Length != 3){
             return false;
@@ -72,18 +73,18 @@ public class CalculadoraSimples{
 
         if(entrada[1] != "+" && entrada[1] != "-" && entrada[1] != "*" && entrada[1] != "/"){
             
-            saida = false;
+            valido = false;
         }
         else if(!double.TryParse(entrada[0], out _)){
             
-            saida = false;
+            valido = false;
         }
         else if(!double.TryParse(entrada[2], out _)){
             
-            saida = false;
+            valido = false;
         }
 
-        return saida;
+        return valido;
 
     }
     
@@ -92,28 +93,28 @@ public class CalculadoraSimples{
         double num1 = double.Parse(entrada[0]);
         double num2 = double.Parse(entrada[2]);
 
-        double saida = 0;
+        double resultado = 0;
 
         switch (entrada[1]){
             
             case "+":
-                saida = num1 + num2;
+                resultado = num1 + num2;
             break;
 
             case "-":
-                saida = num1 - num2;
+                resultado = num1 - num2;
             break;
 
             case "*":
-                saida = num1 * num2;
+                resultado = num1 * num2;
             break;
 
             case "/":
-                saida = num1 / num2;
+                resultado = num1 / num2;
             break;
         }
 
-        return saida;
+        return resultado;
     }
 
 }
