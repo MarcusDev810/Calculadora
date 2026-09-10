@@ -19,7 +19,7 @@ public class CalculadoraSimples{
         Thread.Sleep(2500);
 
         Console.Clear();
-        Console.WriteLine("Aqui você terá que digitar a operação toda de uma vez no terminal!\n");
+        Console.WriteLine("Aqui você terá que digitar a operação toda de uma vez no terminal (operações apenas de dois números)!\n");
         Console.WriteLine("Exemplos: '23 * 3' ou '12421 - 63274'");
         Console.WriteLine("Sempre separando os números e os sinais por um espaço\n");
         Console.WriteLine("Para começar clique no botão 'Enter'");
