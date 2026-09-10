@@ -65,10 +65,10 @@ class CalculadoraRobusta{
         bool valido = true;
 
         if(entrada.Length < 3){
-            valido = false;
+            valido = false; Console.WriteLine("menor que 3"); Console.ReadLine();
         }
-        else if(entrada.Length % 2 != 0){
-            valido = false;
+        else if(entrada.Length % 2 == 0){
+            valido = false; Console.WriteLine("não é impar");Console.ReadLine();
         }
 
         for(int i = 0; i < entrada.Length; i++){
@@ -77,13 +77,13 @@ class CalculadoraRobusta{
 
                 if(!double.TryParse(entrada[i], out _)){
 
-                    valido = false;
+                    valido = false; Console.WriteLine("não é numero");Console.ReadLine();
                 }
             }
             else{
                 if(entrada[i] != "+" && entrada[i] != "-" && entrada[i] != "*" && entrada[i] != "/"){
-                    
-                    valido = false;
+
+                    valido = false; Console.WriteLine("Erro no sinal");Console.ReadLine();
                 }
 
             }

@@ -36,6 +36,7 @@ class Program{
             Console.WriteLine("0 - Sair");
             Console.WriteLine("1 - Calculadora de adição simples (dois números)");
             Console.WriteLine("2 - Calculadora simples das quatro operações basicas (+, -, *, /)");
+            Console.WriteLine("3 - Calculadora robusta das quatro operações basicas (+, -, *, /)");
             Console.WriteLine("Digite sua escolha:");
 
             entrada = int.Parse(Console.ReadLine());
@@ -56,7 +57,7 @@ class Program{
         
         bool saida = true;
 
-        if(entrada < 0 || entrada > 2){
+        if(entrada < 0 || entrada > 3){
             saida = false;
         }
 
@@ -72,6 +73,10 @@ class Program{
 
             case 2:
                 new CalculadoraSimples();
+            break;
+
+            case 3:
+                new CalculadoraRobusta();
             break;
         }
 
